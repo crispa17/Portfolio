@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -149,7 +149,7 @@ export default function Portfolio() {
           />
           <textarea
             className="p-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-            rows="5"
+            rows={5}
             placeholder="Your Message"
             required
           ></textarea>
