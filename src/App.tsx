@@ -28,7 +28,7 @@ export default function Portfolio() {
           onClick={() => setDarkMode(!darkMode)}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition"
         >
-          Toggle {darkMode ? "Light" : "Dark"} Mode
+          {darkMode ? "Light" : "Dark"} Mode
         </button>
       </header>
 
@@ -169,10 +169,8 @@ export default function Portfolio() {
         transition={{ delay: 0.5, duration: 0.5 }}
       >
         <p>Contact: parrinocristian17@gmail.com</p>
-        <p>
-          GitHub: github.com/crispa17 | LinkedIn:
-          linkedin.com/in/cristian-parrino-2573a
-        </p>
+        <p>GitHub: github.com/crispa17</p>
+        <p>LinkedIn: linkedin.com/in/cristian-parrino-2573a</p>
       </motion.footer>
     </div>
   );
