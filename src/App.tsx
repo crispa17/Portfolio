@@ -37,7 +37,7 @@ export default function Portfolio() {
         <img
           src={darkMode ? "/cartoon-light.png" : "/cartoon-dark.png"}
           alt="Cristian cartoon avatar"
-          className="mx-auto w-45 h-45 object-contain transition-all duration-500"
+          className="mx-auto h-40 object-contain transition-all duration-500"
         />
 
         <p className="text-xl text-gray-600 dark:text-gray-300">
