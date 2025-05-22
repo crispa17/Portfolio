@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
 export default function Portfolio() {
@@ -28,7 +28,7 @@ export default function Portfolio() {
   return (
     <div
       className={`${
-        darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+        darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
       } min-h-screen p-6 font-sans transition-colors duration-500`}
     >
       <header className="text-center mb-12">
@@ -40,7 +40,7 @@ export default function Portfolio() {
           className="mx-auto w-50 h-50 object-contain transition-all duration-500"
         />
 
-        <p className="text-xl text-black dark:text-gray-300">
+        <p className="text-xl !text-gray-600 dark:text-gray-300">
           <Typewriter
             words={[
               "Frontend Developer",
@@ -67,7 +67,7 @@ export default function Portfolio() {
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-        <p className="text-lg max-w-3xl mx-auto text-center text-black dark:text-gray-300">
+        <p className="text-lg max-w-3xl mx-auto text-center !text-gray-600 dark:text-gray-300">
           I'm a passionate Frontend Developer with over 3 years of experience
           crafting modern, performant web interfaces using technologies like
           React, Angular, and TypeScript. I love creating engaging user
@@ -141,7 +141,7 @@ export default function Portfolio() {
         transition={{ delay: 0.3, duration: 0.5 }}
       >
         <h2 className="text-2xl font-semibold mb-4">Certifications</h2>
-        <ul className="list-disc list-inside text-black dark:text-gray-300">
+        <ul className="list-disc list-inside !text-gray-600 dark:text-gray-300">
           <li>Advanced Angular Development - Coursera</li>
           <li>Angular for Front End Engineers - Coursera</li>
         </ul>
