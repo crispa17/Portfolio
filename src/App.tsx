@@ -6,24 +6,26 @@ export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
 
   const projects = [
-    {
-      title: "Habit Tracker",
-      desc: "A productivity app to manage daily habits with monthly goals, streak tracking, and modern UI. Built using Angular standalone components, NgRx and PrimeNG.",
-      link: "https://github.com/crispa17/habit-tracker-angular",
-    },
-    {
-      title: "Portfolio Website",
-      desc: "A responsive portfolio built with React and Tailwind CSS to showcase personal projects and skills.",
-    },
-    {
-      title: "Dashboard App",
-      desc: "An interactive admin dashboard with charts and tables, developed using Angular and TypeScript.",
-    },
-    {
-      title: "E-commerce UI",
-      desc: "A modern e-commerce front-end prototype using React, styled-components, and responsive design.",
-    },
-  ];
+  {
+    title: "Habit Tracker",
+    desc: "A productivity app to manage daily habits with monthly goals, streak tracking, and modern UI. Built using Angular standalone components, NgRx and PrimeNG.",
+    link: "https://github.com/crispa17/habit-tracker-angular",
+  },
+  {
+    title: "Portfolio Website",
+    desc: "A responsive portfolio built with React and Tailwind CSS to showcase personal projects and skills.",
+  },
+  {
+    title: "AI Proxy Server",
+    desc: "A Node.js proxy microservice deployed on Vercel to securely relay requests to Mistral AI APIs, handling CORS and preflight requests for frontend applications.",
+    link: "https://github.com/crispa17/proxy-server",
+  },
+  {
+    title: "Shopping Assistant AI",
+    desc: "An Angular app that communicates with a custom proxy to Mistral AI to generate AI-powered shopping lists based on natural language prompts. Includes loading UX and robust error handling.",
+    link: "https://shopping-assistant-three.vercel.app/shopping",
+  },
+];
 
   return (
     <div
