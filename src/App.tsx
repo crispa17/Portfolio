@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSun, FaMoon, FaAward } from "react-icons/fa";
 
 export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,18 +31,22 @@ export default function Portfolio() {
   const certifications = [
     {
       name: "Advanced Angular Development",
+      issuer: "Coursera",
       link: "https://www.coursera.org/account/accomplishments/verify/GFTZ00KAZZO5?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse",
     },
     {
       name: "Angular for Front End Engineers",
+      issuer: "Coursera",
       link: "https://www.coursera.org/account/accomplishments/verify/XIX9SBVZFQQQ?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Dcourse",
     },
     {
       name: "Angular 17",
+      issuer: "Coursera",
       link: "https://www.coursera.org/account/accomplishments/specialization/SDQCR3K5L4G2?utm_source%3Dandroid%26utm_medium%3Dcertificate%26utm_content%3Dcert_image%26utm_campaign%3Dsharing_cta%26utm_product%3Ds12n",
     },
     {
       name: "Angular Testing: Unit Testing Angular and E2E Testing",
+      issuer: "Udemy",
       link: "https://www.udemy.com/certificate/UC-2ed8bd35-5619-4fd4-aedb-b68c9de6115d/",
     },
   ];
@@ -72,7 +76,7 @@ export default function Portfolio() {
           ${
             darkMode
               ? "bg-gray-700 text-white hover:bg-gray-600"
-              : "bg-gray-800 text-white hover:bg-blue-600"
+              : "bg-gray-800 text-white hover:bg-gray-700"
           }`}
         aria-label="Toggle dark mode"
       >
@@ -141,8 +145,8 @@ export default function Portfolio() {
             "Git",
             "Java",
             "Figma",
-            "NgRx", // Aggiunto per coerenza con la descrizione di Habit Tracker
-            "PrimeNG", // Aggiunto per coerenza con la descrizione di Habit Tracker
+            "NgRx",
+            "PrimeNG",
           ].map((skill) => (
             <motion.li
               key={skill}
@@ -184,34 +188,40 @@ export default function Portfolio() {
       </motion.section>
 
       <motion.section
+        id="certifications"
         className="mb-12"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
-        <h2 className="text-2xl font-semibold mb-4 text-center">Certifications</h2>
-        <ul
-          className={`list-disc list-inside space-y-2 max-w-3xl mx-auto ${
-            darkMode ? "text-gray-300" : "text-black"
-          }`}
-        >
+        <h2 className="text-2xl font-semibold mb-6 text-center">Certifications</h2>
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {certifications.map((cert, idx) => (
-            <li key={idx}>
-              {cert.link ? (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg transition-all duration-300 flex flex-col items-center text-center"
+            >
+              <FaAward size={40} className="text-blue-500 dark:text-blue-400 mb-3" />
+              <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">
+                {cert.name}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
+                Issued by: {cert.issuer}
+              </p>
+              {cert.link && (
                 <a
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                  className="mt-auto bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition duration-300 ease-in-out text-sm"
                 >
-                  {cert.name}
+                  View Certificate
                 </a>
-              ) : (
-                cert.name
               )}
-            </li>
+            </motion.div>
           ))}
-        </ul>
+        </div>
       </motion.section>
 
       <motion.section
